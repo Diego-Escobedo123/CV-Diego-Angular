@@ -1,0 +1,28 @@
+.tabla-container {
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.table {
+  font-size: 0.9rem;
+}
+
+.table th,
+.table td {
+  padding: 0.6rem;
+}
+
+.certificate-img {
+  max-height: 110px;
+  transition: transform 0.3s ease;
+}
+
+.certificate-img:hover {
+  transform: scale(1.03);
+}
+
+.table {
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+}

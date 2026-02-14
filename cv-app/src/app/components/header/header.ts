@@ -25,7 +25,6 @@ export class HeaderComponent implements OnInit {
     else if (hora < 19) this.saludo = '¡Buenas tardes!';
     else this.saludo = '¡Buenas noches!';
 
-    // ✅ SOLO si estamos en el navegador
     if (this.isBrowser && window.innerWidth < 768) {
       this.mostrarContacto = false;
     }

@@ -4,10 +4,11 @@ import { HeaderComponent } from './components/header/header'
 import { DatosPersonalesComponent } from './components/datos-personales/datos-personales';
 import { LenguajesComponent } from './components/lenguajes/lenguajes';
 import { VirtudesComponent } from './components/virtudes/virtudes';
+import { TablaEducacionCompetenciaComponent } from './components/tabla-educacion-competencia/tabla-educacion-competencia';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, DatosPersonalesComponent, LenguajesComponent, VirtudesComponent],
+  imports: [RouterOutlet, HeaderComponent, DatosPersonalesComponent, LenguajesComponent, VirtudesComponent, TablaEducacionCompetenciaComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
