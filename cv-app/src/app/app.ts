@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header'
 import { DatosPersonalesComponent } from './components/datos-personales/datos-personales';
 import { LenguajesComponent } from './components/lenguajes/lenguajes';
+import { VirtudesComponent } from './components/virtudes/virtudes';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, DatosPersonalesComponent, LenguajesComponent],
+  imports: [RouterOutlet, HeaderComponent, DatosPersonalesComponent, LenguajesComponent, VirtudesComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
