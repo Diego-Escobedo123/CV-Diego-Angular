@@ -1,34 +1,27 @@
 <div class="container py-4">
 
-  <!-- Cabecera -->
-  <app-header></app-header>
+    <app-header
+      [modoOscuro]="modoOscuro"
+      (cambiarTema)="toggleTema()">
+    </app-header>
 
-  <main class="row g-4">
+    <main class="row g-4">
 
-    <!-- Columna Izquierda -->
-    <aside class="col-lg-4">
-      <app-datos-personales></app-datos-personales>
-      <app-lenguajes></app-lenguajes>
-      <app-virtudes></app-virtudes>
-    </aside>
+      <aside class="col-lg-4">
+        <app-datos-personales></app-datos-personales>
+        <app-lenguajes></app-lenguajes>
+        <app-virtudes></app-virtudes>
+      </aside>
 
-    <!-- Columna derecha -->
-    <div class="col-lg-8">
-      <app-tabla-educacion-competencia></app-tabla-educacion-competencia>
-    </div>
+      <div class="col-lg-8">
+        <app-tabla-educacion-competencia></app-tabla-educacion-competencia>
+      </div>
 
-  </main>
+    </main>
 
-  <!-- Pie de página -->
-  <footer class="footer mt-5 pt-4 border-top">
-    <div class="text-center">
-      <p class="text-muted mb-2">
-        <i class="bi bi-c-circle"></i> 2026 Diego Escobedo
-      </p>
-      <p class="text-muted small">
-        <i class="bi bi-geo-alt"></i> Puerto Barrios Izabal, Guatemala
-      </p>
-    </div>
-  </footer>
+    <footer class="footer mt-5 pt-4 border-top text-center">
+      <p class="mb-2">© 2026 Diego Escobedo</p>
+      <p class="small">Puerto Barrios Izabal, Guatemala</p>
+    </footer>
 
-</div>
+  </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
@@ -9,6 +9,14 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
   styleUrls: ['./header.css']
 })
 export class HeaderComponent implements OnInit {
+
+  @Input() modoOscuro!: boolean;
+
+  @Output() cambiarTema = new EventEmitter<void>();
+
+  toggleTema(): void {
+    this.cambiarTema.emit();
+  }
 
   saludo: string = '';
   mostrarContacto: boolean = true;

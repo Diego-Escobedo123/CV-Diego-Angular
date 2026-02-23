@@ -17,6 +17,18 @@
     </button>
   </div>
 
+  <button
+  class="btn btn-sm mt-3"
+  [ngClass]="modoOscuro ? 'btn-light' : 'btn-dark'"
+  (click)="toggleTema()">
+
+  <i class="bi"
+     [ngClass]="modoOscuro ? 'bi-sun-fill' : 'bi-moon-fill'"></i>
+
+  {{ modoOscuro ? 'Modo Claro' : 'Modo Oscuro' }}
+
+  </button>
+
   <div class="d-flex justify-content-center mb-2">
     <button class="btn btn-outline-light btn-sm"
             (click)="toggleContacto()">
