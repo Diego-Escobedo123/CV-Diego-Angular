@@ -17,3 +17,11 @@ body.dark-mode .footer-cv {
   border-color: #333 !important;
   color: #ccc !important;
 }
+
+:root {
+  --card-bg: #ffffff;
+}
+
+.dark-mode {
+  --card-bg: #1e1e1e;
+}
