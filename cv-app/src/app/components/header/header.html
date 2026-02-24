@@ -1,5 +1,6 @@
 <header class="cv-header text-white mb-5">
 
+  <!-- Perfil -->
   <div class="profile text-center mb-4">
     <img src="Diego-Escobedo.jpg"
          class="profile-img img-thumbnail rounded-circle border border-3 border-white shadow-lg mb-3">
@@ -10,25 +11,54 @@
     <h3 class="fw-light">{{ saludo }}</h3>
   </div>
 
+  <!-- Botón PDF -->
   <div class="text-center mb-4">
     <button class="btn btn-light btn-lg px-4 shadow-sm"
             (click)="descargarPDF()">
-      <i class="bi bi-file-earmark-pdf me-2"></i>Descargar como PDF
+      <i class="bi bi-file-earmark-pdf me-2"></i>
+      Descargar como PDF
     </button>
   </div>
 
-  <button
-  class="btn btn-sm mt-3"
-  [ngClass]="modoOscuro ? 'btn-light' : 'btn-dark'"
-  (click)="toggleTema()">
+  <!-- Botón modo oscuro -->
+  <div class="text-center mb-3">
+    <button
+      class="btn btn-sm"
+      [ngClass]="modoOscuro ? 'btn-light' : 'btn-dark'"
+      (click)="toggleTema()">
 
-  <i class="bi"
-     [ngClass]="modoOscuro ? 'bi-sun-fill' : 'bi-moon-fill'"></i>
+      <i class="bi"
+         [ngClass]="modoOscuro ? 'bi-sun-fill' : 'bi-moon-fill'"></i>
 
-  {{ modoOscuro ? 'Modo Claro' : 'Modo Oscuro' }}
+      {{ modoOscuro ? 'Modo Claro' : 'Modo Oscuro' }}
+    </button>
+  </div>
 
-  </button>
+  <!-- NUEVO MENÚ DE NAVEGACIÓN -->
+  <nav class="nav-menu mb-4">
+    <a routerLink="/" 
+       routerLinkActive="active-link"
+       [routerLinkActiveOptions]="{ exact: true }">
+       Home
+    </a>
 
+    <a routerLink="/about"
+       routerLinkActive="active-link">
+       About
+    </a>
+
+    <a routerLink="/skills"
+       routerLinkActive="active-link">
+       Skills
+    </a>
+
+    <a routerLink="/experience"
+       routerLinkActive="active-link">
+       Experience
+    </a>
+  </nav>
+
+  <!-- Botón Contacto -->
   <div class="d-flex justify-content-center mb-2">
     <button class="btn btn-outline-light btn-sm"
             (click)="toggleContacto()">
@@ -38,12 +68,15 @@
     </button>
   </div>
 
+  <!-- Contacto -->
   <nav class="contact-nav d-flex justify-content-center flex-wrap gap-3"
        *ngIf="mostrarContacto">
     <a href="mailto:diego.escobedo@ufm.edu" class="btn btn-outline-light">
       <i class="bi bi-envelope me-2"></i>Email
     </a>
-    <a href="https://github.com/Diego-Escobedo123" target="_blank"
+
+    <a href="https://github.com/Diego-Escobedo123"
+       target="_blank"
        class="btn btn-outline-light">
       <i class="bi bi-github me-2"></i>GitHub
     </a>

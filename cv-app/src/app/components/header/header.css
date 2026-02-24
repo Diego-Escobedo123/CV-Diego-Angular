@@ -10,3 +10,26 @@
   height: 180px;
   object-fit: cover;
 }
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-size: 18px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-menu a:hover {
+  opacity: 0.7;
+}
+
+.active-link {
+  border-bottom: 2px solid white;
+  padding-bottom: 3px;
+}
