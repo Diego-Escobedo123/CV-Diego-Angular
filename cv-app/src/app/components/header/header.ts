@@ -1,6 +1,5 @@
 import { Component, OnInit, Inject, PLATFORM_ID, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -13,16 +12,13 @@ import { RouterModule } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   @Input() modoOscuro!: boolean;
-
   @Output() cambiarTema = new EventEmitter<void>();
-
-  toggleTema(): void {
-    this.cambiarTema.emit();
-  }
 
   saludo: string = '';
   mostrarContacto: boolean = true;
   isBrowser: boolean;
+
+  fechaActual: Date = new Date();
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     this.isBrowser = isPlatformBrowser(this.platformId);
@@ -38,6 +34,10 @@ export class HeaderComponent implements OnInit {
     if (this.isBrowser && window.innerWidth < 768) {
       this.mostrarContacto = false;
     }
+  }
+
+  toggleTema(): void {
+    this.cambiarTema.emit();
   }
 
   toggleContacto(): void {

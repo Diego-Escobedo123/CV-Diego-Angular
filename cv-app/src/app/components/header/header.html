@@ -9,6 +9,12 @@
     <p class="lead">Estudiante de la Universidad Francisco Marroquín</p>
 
     <h3 class="fw-light">{{ saludo }}</h3>
+
+    <p class="small mt-2">
+      Última actualización:
+      {{ fechaActual | date:'longDate' }}
+    </p>
+
   </div>
 
   <!-- Botón PDF -->
@@ -34,7 +40,7 @@
     </button>
   </div>
 
-  <!-- NUEVO MENÚ DE NAVEGACIÓN -->
+  <!-- Menú de navegación -->
   <nav class="nav-menu mb-4">
     <a routerLink="/" 
        routerLinkActive="active-link"
