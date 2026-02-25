@@ -1,0 +1,12 @@
+<div class="card p-4 shadow-sm">
+
+  <h4 class="mb-3">Academic Background</h4>
+
+  <div *ngFor="let estudio of estudios" class="mb-3">
+    <h5>{{ estudio.institucion }}</h5>
+    <p class="mb-0">{{ estudio.carrera }}</p>
+    <small class="text-muted">{{ estudio.periodo }}</small>
+    <hr>
+  </div>
+
+</div>

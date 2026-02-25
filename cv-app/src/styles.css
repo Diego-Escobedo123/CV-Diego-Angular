@@ -1,0 +1,27 @@
+body.dark-mode {
+  background-color: #121212 !important;
+  color: #f1f1f1 !important;
+}
+
+body.dark-mode .cv-wrapper {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .table {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .footer-cv {
+  border-color: #333 !important;
+  color: #ccc !important;
+}
+
+:root {
+  --card-bg: #ffffff;
+}
+
+.dark-mode {
+  --card-bg: #1e1e1e;
+}

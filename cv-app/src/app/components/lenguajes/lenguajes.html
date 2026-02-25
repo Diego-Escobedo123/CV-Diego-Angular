@@ -1,0 +1,40 @@
+<div class="card shadow-sm mb-4">
+  <div class="card-header bg-success text-white">
+    <div class="d-flex justify-content-between align-items-center">
+
+      <h3 class="card-title h5 mb-0">
+        <i class="bi bi-code-slash me-2"></i>
+        Lenguajes de Programación
+      </h3>
+
+      <div class="input-group input-group-sm">
+        <input type="text"
+               class="form-control"
+               [(ngModel)]="searchText"
+               placeholder="Buscar habilidades...">
+
+        <button class="btn btn-light"
+                (click)="limpiarBusqueda()">
+          <i class="bi bi-x"></i>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="d-flex flex-wrap gap-2">
+
+      <span *ngFor="let habilidad of habilidadesFiltradas"
+            class="badge bg-primary py-2 px-3 fs-6">
+        {{ habilidad }}
+      </span>
+
+      <div *ngIf="habilidadesFiltradas.length === 0"
+           class="text-muted small mt-2">
+        No se encontraron habilidades
+      </div>
+
+    </div>
+  </div>
+</div>
