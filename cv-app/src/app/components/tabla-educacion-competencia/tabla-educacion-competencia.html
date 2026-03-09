@@ -1,0 +1,88 @@
+<!-- Sección de educación -->
+<section class="education mb-5">
+
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="h3 text-primary mb-0">
+      <i class="bi bi-mortarboard me-2"></i>
+      Educación
+    </h2>
+
+    <button class="btn btn-outline-primary btn-sm"
+            (click)="toggleEducacion()">
+      <i class="bi"
+         [ngClass]="mostrarEducacion ? 'bi-eye-slash' : 'bi-eye'"></i>
+      {{ mostrarEducacion ? 'Ocultar' : 'Mostrar' }}
+    </button>
+  </div>
+
+  <div class="table-responsive" *ngIf="mostrarEducacion">
+    <table class="table table-hover table-bordered align-middle">
+      <thead class="table-primary">
+        <tr>
+          <th class="col-2">Año</th>
+          <th class="col-4">Institución</th>
+          <th class="col-6">Certificado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fw-bold">2024</td>
+          <td>Colegio Bilingüe ABC</td>
+          <td class="text-center">
+            <img src="TituloColegio.png"
+                 class="certificate-img img-fluid rounded shadow-sm border">
+          </td>
+        </tr>
+        <tr>
+          <td class="fw-bold">2025</td>
+          <td>Universidad Francisco Marroquín</td>
+          <td class="text-center">
+            <img src="DiplomaLiderazgo.png"
+                 class="certificate-img img-fluid rounded shadow-sm border">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</section>
+
+<!-- Competencias -->
+<section class="competences">
+
+  <h2 class="h3 mb-4 text-primary border-bottom pb-2">
+    <i class="bi bi-trophy me-2"></i>
+    Competencias Escolares
+  </h2>
+
+  <div class="table-responsive">
+    <table class="table table-hover table-bordered align-middle">
+      <thead class="table-success">
+        <tr>
+          <th class="col-2">Año</th>
+          <th class="col-4">Actividad</th>
+          <th class="col-6">Certificado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fw-bold">2023</td>
+          <td>Spelling Bee</td>
+          <td class="text-center">
+            <img src="spellingbee.png"
+                 class="certificate-img img-fluid rounded shadow-sm border">
+          </td>
+        </tr>
+        <tr>
+          <td class="fw-bold">2024</td>
+          <td>Olimpiada Matemática</td>
+          <td class="text-center">
+            <img src="olimpiadamatematica.png"
+                 class="certificate-img img-fluid rounded shadow-sm border">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</section>

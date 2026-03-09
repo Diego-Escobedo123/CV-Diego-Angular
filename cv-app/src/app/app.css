@@ -1,0 +1,193 @@
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+/* Contenedor principal del CV */
+.cv-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== CABECERA / HEADER ===== */
+.cv-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.profile-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ===== IMÁGENES DE CERTIFICADOS ===== */
+.certificate-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 150px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.certificate-img:hover {
+  transform: scale(1.03);
+}
+
+/* ===== PIE DE PÁGINA ===== */
+.footer-cv {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 2px solid #e9ecef;
+  color: #666;
+}
+
+/* ===== BUSCADOR DE HABILIDADES ===== */
+.input-group-sm {
+  max-width: 200px;
+}
+
+.skill-badge {
+  transition: all 0.3s ease;
+}
+
+/* Mensaje "no results" en buscador */
+.no-results-msg {
+  font-style: italic;
+  color: #6c757d;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ===== BOTONES DE CONTACTO ===== */
+.contact-nav .btn {
+  border-radius: 25px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-width: 140px;
+}
+
+.contact-nav .btn:hover {
+  transform: scale(1.05);
+}
+
+/* ===== BOTÓN DESCARGAR PDF ===== */
+#downloadPdf {
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#downloadPdf:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== ALERT ===== */
+.alert {
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Móviles (≤480px) */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .cv-wrapper {
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .cv-header {
+    padding: 1.5rem;
+  }
+
+  .profile-img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .contact-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-nav .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .certificate-img {
+    max-height: 120px;
+  }
+
+  .table th, .table td {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablets (481px – 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .cv-wrapper {
+    padding: 25px;
+  }
+
+  .cv-header {
+    padding: 1.75rem;
+  }
+
+  .profile-img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .certificate-img {
+    max-height: 140px;
+  }
+}
+
+/* Desktop (≥1024px) */
+@media (min-width: 1024px) {
+  .cv-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .contact-nav {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .certificate-img {
+    max-height: 180px;
+  }
+}
