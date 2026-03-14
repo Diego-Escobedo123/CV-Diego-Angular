@@ -1,5 +1,4 @@
 <section class="container mt-5">
-
   <h2 class="text-center mb-4">Proyectos</h2>
 
   <div *ngIf="loading" class="text-center text-muted mb-4">Cargando proyectos...</div>
@@ -11,9 +10,7 @@
         <h5 class="fw-bold">{{ repo.name }}</h5>
         <p class="text-muted">{{ repo.description || 'Sin descripción disponible' }}</p>
         <p>⭐ Estrellas: {{ repo.stargazers_count }}</p>
-        <a [href]="repo.html_url" target="_blank" class="btn btn-outline-primary btn-sm">
-          Ver repositorio
-        </a>
+        <a [href]="repo.html_url" target="_blank" class="btn btn-outline-primary btn-sm">Ver repositorio</a>
       </div>
     </div>
   </div>
@@ -21,5 +18,4 @@
   <div *ngIf="!loading && repos.length === 0 && !errorMessage" class="text-center text-muted">
     No se encontraron repositorios.
   </div>
-
 </section>
