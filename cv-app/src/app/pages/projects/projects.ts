@@ -28,7 +28,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     console.log('ProjectsComponent ngOnInit - setting up router listener and initial fetch');
 
-    // Hacer fetch inmediatamente
+    // Hacer fetch inmediatamente (para cargas por refresh)
     this.loadRepos();
 
     // También escuchar eventos de navegación para garantizar fetch cuando navegues sin refresh
@@ -47,10 +47,15 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     this.loading = true;
     this.errorMessage = null;
     console.log('ProjectsComponent - calling GithubService.getRepos()');
+
     this.githubService.getRepos().subscribe({
       next: (data: any[]) => {
-        console.log('Github data received (projects.ts)', data);
-        this.repos = (data || []).slice(0, 3);
+        console.log('Github data received (projects.ts) full array ->', data);
+        // Mostrar todo lo que venga del servicio (tus top + académicos fallback o reales)
+        this.repos = data || [];
+        // Opcional: si prefieres limitar a N tarjetas, reemplaza la línea anterior por:
+        // this.repos = (data || []).slice(0, 5);
+        console.log('ProjectsComponent - repos to render ->', this.repos.map(r => r?.name));
         this.loading = false;
         try { this.cdr.detectChanges(); } catch (e) { /* noop */ }
       },
