@@ -1,1 +1,70 @@
-<p>projects works!</p>
+<section class="container mt-5">
+
+  <h2 class="text-center mb-4">Proyectos</h2>
+
+  <div *ngIf="loading" class="text-center text-muted mb-4">
+    Cargando proyectos...
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-warning text-center">
+    {{ errorMessage }}
+  </div>
+
+  <div class="row" *ngIf="!loading && repos.length > 0">
+
+    <div class="col-md-4 mb-4" *ngFor="let repo of repos">
+
+      <div class="card shadow-sm h-100 p-3">
+
+        <!-- Nombre del proyecto -->
+        <h5 class="fw-bold">
+          {{ repo.name }}
+        </h5>
+
+        <!-- Etiqueta para proyecto académico -->
+        <span class="badge bg-info mb-2"
+              *ngIf="repo.owner.login !== 'Diego-Escobedo123'">
+          Academic Project
+        </span>
+
+        <!-- Descripción -->
+        <p class="text-muted">
+
+          {{
+            repo.description
+            || (repo.owner.login !== 'Diego-Escobedo123'
+              ? 'Chinese Checkers game developed for the Programming II course'
+              : 'Sin descripción disponible')
+          }}
+
+        </p>
+
+        <!-- Estrellas -->
+        <p>
+          ⭐ Estrellas: {{ repo.stargazers_count }}
+        </p>
+
+        <!-- Link al repo -->
+        <a
+          [href]="repo.html_url"
+          target="_blank"
+          class="btn btn-outline-primary btn-sm">
+
+          Ver repositorio
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div *ngIf="!loading && repos.length === 0 && !errorMessage"
+       class="text-center text-muted">
+
+    No se encontraron repositorios.
+
+  </div>
+
+</section>

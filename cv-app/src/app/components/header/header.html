@@ -40,6 +40,26 @@
     </button>
   </div>
 
+  <!-- Consejo dinámico -->
+  <div class="text-center mb-3" *ngIf="consejo">
+    <small class="d-block mb-2">
+      💡 Consejo del día:
+    </small>
+
+    <p class="mb-2 fst-italic">
+      "{{ consejo }}"
+    </p>
+
+    <button class="btn btn-outline-light btn-sm"
+            (click)="loadAdvice()"
+            [disabled]="cargandoConsejo">
+
+      <i class="bi bi-arrow-clockwise me-1"></i>
+      {{ cargandoConsejo ? 'Cargando...' : 'Nuevo consejo' }}
+
+    </button>
+  </div>
+
   <!-- Menú de navegación -->
   <nav class="nav-menu mb-4">
     <a routerLink="/" 
@@ -61,6 +81,11 @@
     <a routerLink="/experience"
        routerLinkActive="active-link">
        Experience
+    </a>
+
+    <a routerLink="/projects"
+       routerLinkActive="active-link">
+       Projects
     </a>
   </nav>
 
