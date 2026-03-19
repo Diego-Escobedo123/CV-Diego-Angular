@@ -31,6 +31,28 @@ app.get('/experiences/:id', (req, res) => {
   res.json(exp);
 });
 
+// Crear experiencia
+app.post('/experiences', (req, res) => {
+  const { company, role } = req.body;
+  if (!company || !role) {
+    return res.status(400).json({ error: 'company y role son requeridos' });
+  }
+
+  const newExp = {
+    id: nextId++,
+    company,
+    role,
+    startDate: req.body.startDate || "",
+    endDate: req.body.endDate || null,
+    description: req.body.description || "",
+    tech: req.body.tech || [],
+    highlights: req.body.highlights || []
+  };
+
+  experiences.push(newExp);
+  res.status(201).json(newExp);
+});
+
 app.listen(PORT, () => {
   console.log(`Server corriendo en http://localhost:${PORT}`);
 });
