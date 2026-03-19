@@ -31,7 +31,7 @@ app.get('/experiences/:id', (req, res) => {
   res.json(exp);
 });
 
-// Crear experiencia
+// Crear experiencias
 app.post('/experiences', (req, res) => {
   const { company, role } = req.body;
   if (!company || !role) {
@@ -51,6 +51,25 @@ app.post('/experiences', (req, res) => {
 
   experiences.push(newExp);
   res.status(201).json(newExp);
+});
+
+app.patch('/experiences/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const index = experiences.findIndex(e => e.id === id);
+  if (index === -1) return res.status(404).json({ error: 'Experiencia no encontrada' });
+
+  experiences[index] = { ...experiences[index], ...req.body };
+  res.json(experiences[index]);
+});
+
+// DELETE: eliminar
+app.delete('/experiences/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const index = experiences.findIndex(e => e.id === id);
+  if (index === -1) return res.status(404).json({ error: 'Experiencia no encontrada' });
+
+  const deleted = experiences.splice(index, 1)[0];
+  res.json({ message: 'Experiencia eliminada', experience: deleted });
 });
 
 app.listen(PORT, () => {
