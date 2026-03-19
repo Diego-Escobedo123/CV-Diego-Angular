@@ -23,6 +23,14 @@ app.get('/experiences', (req, res) => {
   res.json(experiences);
 });
 
+// Obtener por id
+app.get('/experiences/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const exp = experiences.find(e => e.id === id);
+  if (!exp) return res.status(404).json({ error: 'Experiencia no encontrada' });
+  res.json(exp);
+});
+
 app.listen(PORT, () => {
   console.log(`Server corriendo en http://localhost:${PORT}`);
 });
